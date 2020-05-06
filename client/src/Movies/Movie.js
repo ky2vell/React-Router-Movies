@@ -25,7 +25,10 @@ const Movie = props => {
   // Uncomment this only when you have moved on to the stretch goals
   const saveMovie = () => {
     const addToSavedList = props.addToSavedList;
-    addToSavedList(movie);
+    const navLink = document.querySelector('.saved-list .active');
+    if (!navLink) {
+      addToSavedList(movie);
+    }
   };
 
   if (!movie) {
